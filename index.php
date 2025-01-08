@@ -9,9 +9,9 @@ include ('auto_update.php');
 include ('ics_parser.php');
 include ('additionalfunctions.php');
 
-if (isset($_GET['calyear'])) $calyear = $_GET['calyear'];
+if (isset($_GET['calyear'])) $calyear = htmlspecialchars($_GET['calyear']);
 else $calyear = date("Y");
-if (isset($_GET['calmonth'])) $calmonth = $_GET['calmonth'];
+if (isset($_GET['calmonth'])) $calmonth = htmlspecialchars($_GET['calmonth']);
 else $calmonth = date("m");
 
 if ((intval($calmonth) > 1)and(intval($calmonth) < 12)) {
